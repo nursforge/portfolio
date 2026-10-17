@@ -24,5 +24,3 @@
 `https://nursforge.github.io/portfolio/`
 
 ---
-
-Спасибо, что заглянули! ✨
