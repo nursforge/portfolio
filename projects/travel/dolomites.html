@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <title>Доломиты — Alys.kz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f7f5ef;
+        --ink: #19352f;
+        --muted: #66736d;
+        --green: #246b54;
+        --lime: #d7ee78;
+        --line: #e5e4db;
+        --serif: Georgia, serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "DM Sans", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1120px, calc(100% - 48px));
+        margin: auto;
+      }
+      .nav {
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand {
+        font:
+          800 25px Manrope,
+          sans-serif;
+        letter-spacing: -1.5px;
+        display: flex;
+        gap: 9px;
+        align-items: center;
+      }
+      .mark {
+        width: 30px;
+        height: 30px;
+        border-radius: 50% 50% 50% 8px;
+        background: var(--lime);
+        display: grid;
+        place-items: center;
+        color: var(--green);
+      }
+      .back {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .back:hover {
+        color: var(--green);
+      }
+      .hero {
+        padding: 38px 0 52px;
+      }
+      .crumb {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 25px;
+      }
+      .crumb a {
+        color: var(--green);
+      }
+      .top {
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        gap: 55px;
+        align-items: center;
+      }
+      .eyebrow {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--green);
+        font-weight: 700;
+      }
+      .hero h1 {
+        font: 500 clamp(44px, 6vw, 72px) / 1.02 var(--serif);
+        letter-spacing: -2.8px;
+        margin: 17px 0 12px;
+      }
+      .subtitle {
+        font: 24px/1.3 var(--serif);
+        color: var(--green);
+        margin: 0 0 22px;
+      }
+      .lead {
+        font-size: 15px;
+        line-height: 1.8;
+        color: var(--muted);
+        max-width: 510px;
+      }
+      .heroimg {
+        height: 400px;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+      .heroimg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .pricebar {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-top: 27px;
+      }
+      .price strong {
+        font: 30px var(--serif);
+      }
+      .price span {
+        font-size: 11px;
+        color: var(--muted);
+        display: block;
+        margin-top: 3px;
+      }
+      .btn {
+        border: 0;
+        background: var(--ink);
+        color: #fff;
+        padding: 15px 21px;
+        border-radius: 99px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .btn:hover {
+        background: var(--green);
+      }
+      .details {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background: white;
+        border-radius: 14px;
+        padding: 23px 25px;
+        margin: 14px 0 70px;
+        box-shadow: 0 12px 35px #17372a0c;
+      }
+      .detail {
+        padding: 3px 22px;
+        border-right: 1px solid var(--line);
+      }
+      .detail:first-child {
+        padding-left: 0;
+      }
+      .detail:last-child {
+        border: 0;
+      }
+      .detail span {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 10px;
+        color: #89938c;
+        margin-bottom: 8px;
+      }
+      .detail b {
+        font-size: 14px;
+      }
+      .content {
+        display: grid;
+        grid-template-columns: 1.1fr 0.8fr;
+        gap: 75px;
+        padding-bottom: 80px;
+      }
+      .content h2 {
+        font: 42px/1.1 var(--serif);
+        font-weight: 400;
+        letter-spacing: -1px;
+        margin: 13px 0 17px;
+      }
+      .content p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.8;
+      }
+      .route {
+        list-style: none;
+        margin: 27px 0 0;
+        padding: 0;
+      }
+      .route li {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+        display: flex;
+        gap: 14px;
+      }
+      .route li:before {
+        content: "✳";
+        color: var(--green);
+      }
+      .includes {
+        background: #e9eee5;
+        border-radius: 14px;
+        padding: 30px;
+      }
+      .includes h3 {
+        font: 28px var(--serif);
+        font-weight: 400;
+        margin: 0 0 18px;
+      }
+      .includes ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .includes li {
+        padding: 12px 0;
+        border-bottom: 1px solid #d6dfd4;
+        color: #4d6258;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      .includes li:before {
+        content: "✓";
+        color: var(--green);
+        margin-right: 10px;
+        font-weight: bold;
+      }
+      .note {
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+        color: #7b867e !important;
+        margin-top: 19px;
+      }
+      .contact {
+        background: var(--ink);
+        color: white;
+        border-radius: 16px;
+        padding: 35px 42px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        margin-bottom: 65px;
+      }
+      .contact h2 {
+        font: 34px var(--serif);
+        font-weight: 400;
+        margin: 0 0 8px;
+      }
+      .contact p {
+        font-size: 12px;
+        color: #c0cdc5;
+        margin: 0;
+      }
+      .contact .btn {
+        background: var(--lime);
+        color: var(--ink);
+        white-space: nowrap;
+      }
+      .footer {
+        border-top: 1px solid var(--line);
+        padding: 25px 0 35px;
+        font-size: 11px;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .footer-links {
+        display: flex;
+        gap: 20px;
+      }
+      .footer-links a:hover {
+        color: var(--green);
+      }
+      .toast {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 15px);
+        opacity: 0;
+        background: var(--ink);
+        color: white;
+        padding: 13px 18px;
+        border-radius: 99px;
+        font-size: 13px;
+        transition: 0.25s;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+      @media (max-width: 760px) {
+        .wrap {
+          width: calc(100% - 36px);
+        }
+        .top {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .heroimg {
+          height: 340px;
+          grid-row: 1;
+        }
+        .hero {
+          padding-top: 20px;
+        }
+        .details {
+          margin-bottom: 52px;
+          padding: 18px;
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .detail,
+        .detail:first-child {
+          padding: 0 0 12px;
+          border: 0;
+          border-bottom: 1px solid var(--line);
+        }
+        .detail:last-child {
+          border: 0;
+          padding: 0;
+        }
+        .content {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .content h2 {
+          font-size: 36px;
+        }
+        .contact {
+          padding: 28px;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .footer {
+          gap: 14px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .footer-links {
+          flex-wrap: wrap;
+        }
+      }
+      .contact-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 30;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.2s,
+          visibility 0.2s;
+      }
+      .contact-modal.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .contact-shade {
+        position: absolute;
+        inset: 0;
+        background: rgba(18, 38, 32, 0.55);
+        backdrop-filter: blur(5px);
+      }
+      .contact-dialog {
+        position: relative;
+        width: min(440px, 100%);
+        background: var(--paper);
+        border-radius: 20px;
+        padding: 36px;
+        box-shadow: 0 24px 80px #10271f40;
+        transform: translateY(12px);
+        transition: transform 0.2s;
+      }
+      .contact-modal.is-open .contact-dialog {
+        transform: translateY(0);
+      }
+      .contact-close {
+        position: absolute;
+        right: 16px;
+        top: 14px;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        font-size: 25px;
+        cursor: pointer;
+      }
+      .contact-dialog h2 {
+        font: 38px/1.05 var(--serif);
+        font-weight: 400;
+        letter-spacing: -1px;
+        margin: 14px 0 9px;
+      }
+      .contact-intro {
+        font-size: 13px;
+        line-height: 1.6;
+        color: var(--muted);
+        margin: 0 0 22px;
+      }
+      .contact-options {
+        display: grid;
+        gap: 10px;
+      }
+      .contact-option {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 15px;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        transition: 0.2s;
+      }
+      .contact-option:hover {
+        border-color: #b7c69d;
+        transform: translateY(-1px);
+      }
+      .contact-icon {
+        width: 39px;
+        height: 39px;
+        border-radius: 12px;
+        background: #edf1e4;
+        display: grid;
+        place-items: center;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .contact-option b {
+        display: block;
+        font-size: 14px;
+      }
+      .contact-option small {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        margin-top: 3px;
+      }
+      .contact-note {
+        font-size: 10px;
+        line-height: 1.5;
+        color: #879189;
+        margin: 17px 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="nav">
+        <a class="brand" href="index.html"><span class="mark">✳</span> Alys.kz</a
+        ><a class="back" href="index.html#destinations">← Все направления</a>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="crumb"><a href="index.html">Главная</a> / Доломиты</div>
+          <div class="top">
+            <div>
+              <div class="eyebrow">Путешествие · Италия</div>
+              <h1>Доломиты</h1>
+              <p class="subtitle">Горные тропы, озёра и воздух свободы</p>
+              <p class="lead">
+                Неделя среди горных вершин и прозрачных озёр для тех, кто любит красивые маршруты и
+                свежий воздух. Темп поездки подойдёт и новичкам.
+              </p>
+              <div class="pricebar">
+                <div class="price">
+                  <strong>360 000 ₸</strong><span>за человека, ориентировочно</span>
+                </div>
+                <button class="btn contact-action contact-trigger">Запросить тур ↗</button>
+              </div>
+            </div>
+            <div class="heroimg"><img src="images/dolomites.jpg" alt="Доломиты" /></div>
+          </div>
+        </section>
+        <section class="details">
+          <div class="detail"><span>Длительность</span><b>6 ночей / 7 дней</b></div>
+          <div class="detail"><span>Лучшее время</span><b>Июнь — сентябрь</b></div>
+          <div class="detail"><span>Формат</span><b>Малая группа · до 10 человек</b></div>
+        </section>
+        <section class="content">
+          <div>
+            <div class="eyebrow">Что вас ждёт</div>
+            <h2>Путешествие с вниманием к деталям</h2>
+            <p>
+              Базируемся в уютном альпийском отеле и каждый день выбираем прогулку по погоде. Будут
+              лёгкие тропы, панорамные подъёмники, горные приюты и время просто смотреть на пейзаж.
+            </p>
+            <h2 style="font-size: 34px; margin-top: 34px">Примерный маршрут</h2>
+            <ol class="route">
+              <li>Озеро Брайес и прогулка по берегу</li>
+              <li>Панорамная тропа у Тре-Чиме</li>
+              <li>Смотровые площадки и горный приют</li>
+              <li>День отдыха в долине</li>
+              <li>Озеро Мизурина и прогулка</li>
+            </ol>
+          </div>
+          <aside class="includes">
+            <h3>В стоимость входит</h3>
+            <ul>
+              <li>Проживание с завтраками</li>
+              <li>Групповой трансфер из аэропорта</li>
+              <li>Сопровождение координатора на маршрутах</li>
+              <li>План маршрутов и рекомендации по снаряжению</li>
+              <li>Поддержка команды во время поездки</li>
+            </ul>
+            <p class="note">
+              Перелёт, подъёмники и обеды в горных приютах оплачиваются отдельно. Маршруты
+              корректируются по погоде. Стоимость указана ориентировочно за одного человека при
+              размещении вдвоём и может меняться в зависимости от дат.
+            </p>
+          </aside>
+        </section>
+        <section class="contact">
+          <div>
+            <h2>Хотите узнать подробности?</h2>
+            <p>Расскажем о ближайших датах, наличии мест и поможем подготовиться.</p>
+          </div>
+          <button class="btn contact-action contact-trigger">Обсудить поездку ↗</button>
+        </section>
+      </main>
+      <footer class="footer">
+        <a class="brand" href="index.html"><span class="mark">✳</span> Alys.kz</a
+        ><span>© 2026 «Alys.kz» · Путешествуйте с чувством</span>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/manapnurs/" target="_blank" rel="noopener">Instagram</a
+          ><a href="https://t.me/deft0n3sss" target="_blank" rel="noopener">Telegram</a
+          ><a href="https://wa.me/nursultanmanapov1" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </footer>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <div class="contact-modal" id="contactModal" aria-hidden="true">
+      <div class="contact-shade" data-contact-close></div>
+      <section
+        class="contact-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactTitle"
+      >
+        <button class="contact-close" type="button" aria-label="Закрыть" data-contact-close>
+          ×
+        </button>
+        <div class="eyebrow">Мы на связи</div>
+        <h2 id="contactTitle">Как вам удобнее?</h2>
+        <p class="contact-intro">
+          Выберите, куда написать — ответим и поможем спланировать поездку.
+        </p>
+        <div class="contact-options">
+          <a
+            class="contact-option"
+            href="https://www.instagram.com/manapnurs/"
+            target="_blank"
+            rel="noopener"
+            ><span class="contact-icon">◎</span
+            ><span><b>Instagram</b><small>Написать в Direct</small></span></a
+          ><a class="contact-option" href="https://t.me/deft0n3sss" target="_blank" rel="noopener"
+            ><span class="contact-icon">➤</span
+            ><span><b>Telegram</b><small>Открыть чат</small></span></a
+          ><a
+            class="contact-option"
+            href="https://wa.me/nursultanmanapov1"
+            target="_blank"
+            rel="noopener"
+            ><span class="contact-icon">◉</span
+            ><span><b>WhatsApp</b><small>Написать сообщение</small></span></a
+          >
+        </div>
+        <p class="contact-note">Вы перейдёте в выбранный сервис, чтобы написать нам.</p>
+      </section>
+    </div>
+    <script>
+      const contactModal = document.getElementById("contactModal");
+      function openContactModal() {
+        contactModal.classList.add("is-open");
+        contactModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        contactModal.querySelector(".contact-close").focus();
+      }
+      function closeContactModal() {
+        contactModal.classList.remove("is-open");
+        contactModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+      document.querySelectorAll(".contact-trigger").forEach((el) =>
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          openContactModal();
+        }),
+      );
+      contactModal
+        .querySelectorAll("[data-contact-close]")
+        .forEach((el) => el.addEventListener("click", closeContactModal));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && contactModal.classList.contains("is-open")) closeContactModal();
+      });
+    </script>
+  </body>
+</html>
+
+
+

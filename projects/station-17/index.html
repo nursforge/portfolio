@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071522">
+  <meta name="description" content="Станция Н-17 — интерактивное приключение на краю полярной ночи.">
+  <title>Станция Н-17 — интерактивное приключение</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Станция Н-17"><span class="brand-mark">N</span><span>СЕВЕРНАЯ<br>ЭКСПЕДИЦИЯ</span></a>
+    <div class="header-center"><span class="signal-dot"></span> ПОЛЕВОЙ ЖУРНАЛ <span class="header-divider">/</span> 72° 31′ N</div>
+    <button class="header-save" id="headerSave" type="button" aria-label="Сохранить игру"><span>⌁</span> <b>АВТОСОХРАНЕНИЕ</b></button>
+  </header>
+
+  <main>
+    <section class="home-screen" id="homeScreen">
+      <div class="home-grid">
+        <div class="home-copy">
+          <p class="eyebrow"><span></span> ИНТЕРАКТИВНАЯ ИСТОРИЯ / 01</p>
+          <h1>Станция<br><em>Н-17</em></h1>
+          <p class="home-lead">Последняя связь оборвалась три дня назад. Сегодня ночью рация снова ожила.</p>
+          <p class="home-description">Ты — новый техник на полярной станции. Шторм запер двери, свет гаснет, а кто-то зовёт по имени с нижнего уровня.</p>
+          <div class="home-actions"><button class="button-primary" id="beginButton" type="button">Начать историю <span>↗</span></button><button class="button-secondary" id="continueButton" type="button" hidden>Продолжить <span>→</span></button><span class="home-meta">10–15 МИНУТ <i></i> 3 КОНЦОВКИ</span></div>
+          <div class="home-footnote"><span>01 / 03</span> НОЧЬ ПЕРВАЯ — 23:48</div>
+        </div>
+        <div class="home-art" aria-label="Полярная станция под северным сиянием">
+          <div class="art-coordinate coordinate-top">СЕКТОР Н-17<br>ВЫСОТА 2 840 М</div>
+          <div class="aurora aurora-one"></div><div class="aurora aurora-two"></div>
+          <div class="moon"></div><div class="distant-ridge"></div><div class="snow-slope"></div>
+          <div class="station-silhouette"><div class="station-roof"></div><div class="station-body"><span class="window window-one"></span><span class="window window-two"></span><span class="window window-three"></span><span class="door"></span></div><div class="antenna"><i></i></div><div class="station-leg leg-one"></div><div class="station-leg leg-two"></div></div>
+          <div class="snow-drift drift-one"></div><div class="snow-drift drift-two"></div>
+          <div class="art-coordinate coordinate-bottom">СИГНАЛ: НЕСТАБИЛЕН<br>ТЕМПЕРАТУРА: −38°</div>
+          <div class="art-caption"><span>АРКТИЧЕСКИЙ КРУГ</span><b>тишина здесь<br>только кажется</b></div>
+          <div class="art-cross">✳</div>
+        </div>
+      </div>
+      <div class="home-scroll"><span class="scroll-line"></span> ИСТОРИЯ НАЧИНАЕТСЯ ПОСЛЕ ЗАКАТА</div>
+    </section>
+
+    <section class="game-screen" id="gameScreen" hidden>
+      <div class="game-layout">
+        <aside class="game-sidebar">
+          <a class="back-home" href="#home" id="backHome"><span>←</span> В ШТАБ</a>
+          <div class="chapter-block"><span class="micro-label">ТЕКУЩАЯ ГЛАВА</span><strong id="chapterLabel">01 / БЕЛЫЙ ШУМ</strong></div>
+          <div class="station-map-block"><div class="sidebar-heading"><span class="micro-label">СХЕМА СТАНЦИИ</span><span class="map-coord">N-17</span></div><div class="station-map" id="stationMap" aria-label="Схема посещённых помещений"></div></div>
+          <div class="journal-block"><span class="micro-label">ПОЛЕВОЙ ЖУРНАЛ</span><p id="journalText">Пока ни одной записи.</p><button class="journal-link" id="journalButton" type="button">Открыть журнал <span>↗</span></button></div>
+          <button class="reset-link" id="resetButton" type="button">Начать заново <span>↻</span></button>
+        </aside>
+
+        <section class="scene-column" aria-live="polite">
+          <div class="scene-topline"><span class="signal-dot"></span><span id="sceneCode">N-17 / ВХОДНОЙ ШЛЮЗ</span><time id="sceneTime">23:48</time></div>
+          <div class="scene-visual" id="sceneVisual" data-art="airlock"><div class="visual-vignette"></div><div class="visual-orb"></div><div class="visual-grid"></div><div class="visual-shape shape-a"></div><div class="visual-shape shape-b"></div><div class="visual-lines"></div><span class="visual-coordinate" id="visualCoordinate">72°31′ N / 42°08′ E</span><span class="visual-caption" id="visualCaption">WINTER CONTOUR · FIELD NOTE 01</span></div>
+          <article class="scene-content"><p class="scene-kicker" id="sceneKicker">ГЛАВА 01 — БЕЛЫЙ ШУМ</p><h2 id="sceneTitle">Входной шлюз</h2><div class="scene-text" id="sceneText"></div><div class="choice-list" id="choiceList"></div></article>
+        </section>
+
+        <aside class="status-sidebar">
+          <div class="status-card"><div class="sidebar-heading"><span class="micro-label">СОСТОЯНИЕ</span><span class="status-pulse"></span></div><div class="status-metric"><span>ТЕПЛО</span><b id="warmthLabel">СТАБИЛЬНО</b></div><div class="meter-track"><span id="warmthMeter"></span></div><div class="status-note" id="warmthNote">Пока держишься.</div><div class="status-divider"></div><div class="status-metric"><span>ДОВЕРИЕ</span><b id="trustLabel">НЕИЗВЕСТНО</b></div><div class="trust-track" id="trustTrack"><i></i><i></i><i></i></div><div class="status-note" id="trustNote">На станции пока никого не встретил.</div></div>
+          <div class="inventory-card"><div class="sidebar-heading"><span class="micro-label">С СОБОЙ</span><span class="inventory-count" id="inventoryCount">01</span></div><div class="inventory-list" id="inventoryList"></div></div>
+          <div class="radio-card"><span class="radio-icon">⌁</span><div><span class="micro-label">РАЦИЯ</span><p id="radioStatus">Сигнал потерян</p></div><span class="radio-wave"></span></div>
+          <div class="save-indicator"><span class="save-check">✓</span><span>ПРОГРЕСС СОХРАНЁН<br><b>ЛОКАЛЬНО НА ЭТОМ УСТРОЙСТВЕ</b></span></div>
+        </aside>
+      </div>
+      <section class="ending-screen" id="endingScreen" hidden><div class="ending-card" id="endingCard"></div></section>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>СЕВЕРНАЯ ЭКСПЕДИЦИЯ · 2049</span><span>ВСЕ СИСТЕМЫ ПОД НАБЛЮДЕНИЕМ</span><span>СВЯЗЬ <i class="footer-signal"></i> ЕСТЬ</span></footer>
+
+  <div class="modal" id="journalModal" aria-hidden="true"><button class="modal-shade" type="button" data-close-modal aria-label="Закрыть журнал"></button><section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="journalTitle"><button class="modal-close" data-close-modal type="button" aria-label="Закрыть">×</button><p class="eyebrow"><span></span> ЛИЧНЫЕ ЗАПИСИ</p><h2 id="journalTitle">Полевой журнал</h2><div id="journalEntries" class="journal-entries"></div></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

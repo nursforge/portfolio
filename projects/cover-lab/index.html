@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f0eb">
+  <meta name="description" content="Интерактивная студия генерации музыкальных обложек.">
+  <title>Cover Lab — обложка начинается с идеи</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Cover Lab — главная"><span class="mark">C</span><span>COVER<span class="wordmark-light">LAB</span></span></a>
+    <div class="topbar-note"><span class="live-dot"></span> DIGITAL COVER STUDIO <span class="topbar-divider">/</span> 001—∞</div>
+    <a class="topbar-link" href="#studio">СТУДИЯ <span>↘</span></a>
+  </header>
+
+  <main id="top">
+    <section class="intro-wrap">
+      <div class="intro container">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> ИНСТРУМЕНТ ДЛЯ МУЗЫКАЛЬНЫХ ИДЕЙ</p>
+          <h1>Звук,<br>который <em>видно.</em></h1>
+          <p class="intro-text">Собери обложку для своего следующего релиза. Настрой настроение, типографику и цвет — остальное сложится в композицию.</p>
+          <a class="start-link" href="#studio"><span class="start-icon">↓</span> СОЗДАТЬ ОБЛОЖКУ</a>
+        </div>
+        <div class="intro-art" aria-hidden="true">
+          <div class="intro-cover"><div class="intro-ring"></div><div class="intro-star">✳</div><span class="intro-cover-label">SIDE A · 01</span><span class="intro-cover-title">AFTER<br>HOURS</span><span class="intro-cover-bottom">A STUDY IN SOUND</span></div>
+          <div class="art-note note-one">VISUAL<br>IDENTITY<br><b>FOR SOUND</b></div>
+          <div class="art-note note-two">12:48 AM<br><span>NEW RELEASE</span></div>
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        </div>
+      </div>
+      <div class="intro-index"><span>01</span> / 03 — IDEA INTO IMAGE</div>
+    </section>
+
+    <section class="studio container" id="studio">
+      <div class="studio-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> COVER GENERATOR / V 1.0</p><h2>Твоя обложка<span class="heading-period">.</span></h2></div><p class="studio-caption">Меняй детали, пока изображение<br>не начнёт звучать как надо.</p></div>
+      <div class="studio-layout">
+        <aside class="controls" aria-label="Настройки обложки">
+          <div class="control-section identity-section">
+            <div class="control-title"><span>01</span><h3>Релиз</h3></div>
+            <label class="field-label" for="albumTitle">НАЗВАНИЕ</label>
+            <input class="text-input" id="albumTitle" type="text" maxlength="28" value="Тихий шум" autocomplete="off">
+            <label class="field-label" for="artistName">АРТИСТ</label>
+            <input class="text-input" id="artistName" type="text" maxlength="28" value="комната 404" autocomplete="off">
+          </div>
+
+          <div class="control-section">
+            <div class="control-title"><span>02</span><h3>Настроение</h3></div>
+            <div class="style-grid" role="group" aria-label="Стиль обложки">
+              <button class="style-option selected" data-style="ambient" type="button"><span class="style-swatch swatch-ambient"></span><span>Амбиент</span><i>↗</i></button>
+              <button class="style-option" data-style="synth" type="button"><span class="style-swatch swatch-synth"></span><span>Синтвейв</span><i>↗</i></button>
+              <button class="style-option" data-style="jazz" type="button"><span class="style-swatch swatch-jazz"></span><span>Джаз</span><i>↗</i></button>
+              <button class="style-option" data-style="brutal" type="button"><span class="style-swatch swatch-brutal"></span><span>Брутализм</span><i>↗</i></button>
+            </div>
+          </div>
+
+          <div class="control-section ai-section">
+            <div class="control-title"><span>AI</span><h3>Задай образ</h3></div>
+            <label class="field-label" for="imagePrompt">ОПИШИ, ЧТО ХОЧЕШЬ УВИДЕТЬ</label>
+            <textarea class="text-input prompt-input" id="imagePrompt" maxlength="600">Ночной город после дождя, одинокий жёлтый свет в окне, мягкая плёночная зернистость</textarea>
+            <p class="ai-help">ИИ создаст фон по описанию и выбранному стилю. Название и артист добавятся отдельно.</p>
+            <button class="ai-button" id="generateAi" type="button"><span class="ai-button-icon">✳</span><span>Создать фон с ИИ</span><b>↗</b></button>
+          </div>
+
+          <div class="control-section palette-section">
+            <div class="control-title"><span>03</span><h3>Палитра</h3></div>
+            <div class="palette-row" role="group" aria-label="Цветовая палитра">
+              <button class="palette-option active" type="button" data-palette="night" aria-label="Полуночная палитра"><span style="--chip-a:#baf3dd;--chip-b:#0d3441;--chip-c:#e3fd87"></span></button>
+              <button class="palette-option" type="button" data-palette="sunset" aria-label="Закатная палитра"><span style="--chip-a:#ffaf7b;--chip-b:#8c304f;--chip-c:#ffe1a1"></span></button>
+              <button class="palette-option" type="button" data-palette="mono" aria-label="Монохромная палитра"><span style="--chip-a:#eee8dd;--chip-b:#46434a;--chip-c:#c3bcb0"></span></button>
+              <button class="palette-option" type="button" data-palette="acid" aria-label="Кислотная палитра"><span style="--chip-a:#d3ff00;--chip-b:#3033b7;--chip-c:#fc65bd"></span></button>
+            </div>
+          </div>
+
+          <div class="control-section texture-section">
+            <div class="control-title"><span>04</span><h3>Фактура</h3><output id="grainValue">32%</output></div>
+            <label class="range-label" for="grain">ЗЕРНО ПЛЁНКИ</label>
+            <input id="grain" class="range-input" type="range" min="0" max="80" value="32">
+            <div class="range-ends"><span>ЧИСТО</span><span>АНАЛОГ</span></div>
+          </div>
+
+          <div class="control-actions">
+            <button class="generate-button" id="generate" type="button"><span>Новый вариант без ИИ</span><b>↗</b></button>
+            <button class="download-button" id="download" type="button"><span class="download-icon">↓</span> Скачать PNG</button>
+          </div>
+        </aside>
+
+        <section class="preview-panel" aria-label="Предпросмотр обложки">
+          <div class="preview-topline"><span><i class="live-dot"></i> LIVE PREVIEW</span><span id="previewStyle">AMBIENT / 001</span></div>
+          <div class="canvas-frame"><canvas id="coverCanvas" width="1200" height="1200" role="img" aria-label="Предпросмотр музыкальной обложки"></canvas><div class="generation-overlay" id="generationOverlay" hidden><span class="generation-spinner"></span><strong>Собираем образ</strong><small>ИИ создаёт фон обложки</small></div><div class="canvas-corner corner-tl"></div><div class="canvas-corner corner-br"></div></div>
+          <div class="preview-footer"><span>3000 × 3000 PX</span><span>PNG / RGB / READY TO RELEASE</span></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="manifesto container"><span class="manifesto-number">02</span><p>Нет правильного звука<br>для <em>правильной</em> обложки.</p><span class="manifesto-mark">✳</span></section>
+    <footer class="footer"><a class="wordmark" href="#top"><span class="mark">C</span><span>COVER<span class="wordmark-light">LAB</span></span></a><p>СДЕЛАНО ДЛЯ МУЗЫКИ, КОТОРАЯ ОСТАЁТСЯ.</p><a href="#top">НАВЕРХ ↑</a></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

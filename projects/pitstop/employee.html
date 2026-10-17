@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151515">
+  <meta name="description" content="Профиль сотрудника PITLANE GARAGE.">
+  <title>Профиль сотрудника — PITLANE</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="PITLANE — главная"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 21.5 7.2 13c.5-1.4 1.8-2.3 3.3-2.3h11c1.5 0 2.8.9 3.3 2.3l3.2 8.5v4H4z"/><path d="M8 20h16M11 10.5 13 6h6l2 4.5M8 24h3m10 0h3"/></svg></span><span class="brand-copy"><b>PITLANE</b><small>DETAILING CONTROL</small></span></a>
+      <div class="shop-switcher"><span class="shop-avatar">P</span><span><b>PITLANE GARAGE</b><small>Астана · Бокс 01</small></span><span class="switch-chevron">⌄</span></div>
+      <p class="nav-label">РАБОЧЕЕ ПРОСТРАНСТВО</p>
+      <nav class="main-nav" aria-label="Основная навигация"><a class="nav-item" href="index.html"><span class="nav-icon">▦</span>Обзор</a><a class="nav-item" href="index.html?view=orders"><span class="nav-icon">▤</span>Заказы</a><a class="nav-item" href="index.html?view=services"><span class="nav-icon">◈</span>Услуги</a></nav>
+      <div class="sidebar-bottom"><div class="shift-card"><span class="shift-pulse"></span><span><b>СМЕНА ОТКРЫТА</b><small>Сегодня · 09:00—21:00</small></span><span class="shift-clock" id="shiftClock">--:--</span></div><a class="profile current-profile" href="employee.html" aria-current="page"><span class="profile-avatar" id="sidebarAvatar">НМ</span><span><b id="sidebarName">Нурсултан</b><small id="sidebarRole">Администратор</small></span><span class="profile-menu" aria-hidden="true">↗</span></a></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu" type="button" aria-label="Открыть меню">☰</button><div class="breadcrumb"><a href="index.html">PITLANE GARAGE</a><i>/</i><b>ПРОФИЛЬ СОТРУДНИКА</b></div><div class="topbar-actions"><span class="today-label"><span class="live-dot"></span>БОКС РАБОТАЕТ</span><a class="top-avatar" id="topAvatar" href="employee.html" aria-label="Профиль сотрудника">НМ</a></div></header>
+
+      <div class="employee-content">
+        <div class="employee-page-heading"><div><p class="date-kicker">КОМАНДА PITLANE GARAGE</p><h1>Профиль сотрудника<span>.</span></h1><p>Рабочие данные и текущая статистика заказов.</p></div><button class="button-primary" id="editProfileButton" type="button"><span class="edit-glyph">✎</span>Редактировать профиль</button></div>
+
+        <section class="employee-hero">
+          <div class="employee-identity"><div class="employee-avatar-wrap"><div class="employee-avatar" id="employeeAvatar">НМ</div><span class="employee-online" title="Активен"></span></div><div class="employee-name-block"><span class="employee-status"><i></i>АКТИВНЫЙ СОТРУДНИК</span><h2 id="employeeName">Нурсултан Манапов</h2><p id="employeeRole">Администратор</p></div></div>
+          <div class="hero-fact"><span>СОТРУДНИК</span><b id="employeeCode">PL-001</b><small>PITLANE GARAGE</small></div>
+          <div class="employee-hero-mark">P</div>
+          <div class="employee-red-line"></div>
+        </section>
+
+        <section class="employee-stats" aria-label="Статистика сотрудника"><article class="employee-stat"><span>ЗАКАЗОВ В СИСТЕМЕ</span><b id="assignedOrders">0</b><small>Закреплено за сотрудником</small></article><article class="employee-stat"><span>ЗАВЕРШЕНО</span><b id="completedOrders">0</b><small>Заказы со статусом «Готово»</small></article><article class="employee-stat"><span>В РАБОТЕ</span><b id="activeOrders">0</b><small>Текущие активные заказы</small></article><article class="employee-stat completion-stat"><span>ВЫПОЛНЕНИЕ</span><b id="completionRate">0%</b><small>Доля завершённых заказов</small><div class="completion-meter"><i id="completionMeter"></i></div></article></section>
+
+        <section class="employee-details-grid">
+          <article class="employee-card details-card"><div class="employee-card-heading"><div><p class="section-kicker">ПЕРСОНАЛЬНЫЕ ДАННЫЕ</p><h2>Рабочий профиль</h2></div><span class="card-icon">▤</span></div><div class="details-list">
+            <div class="profile-detail"><span class="detail-symbol">⌖</span><span><small>СТУДИЯ И ЛОКАЦИЯ</small><b id="employeeLocation">PITLANE GARAGE · Астана, Бокс 01</b></span></div>
+            <div class="profile-detail"><span class="detail-symbol">◷</span><span><small>РАБОЧИЙ ГРАФИК</small><b id="employeeShift">09:00—21:00</b></span></div>
+            <div class="profile-detail"><span class="detail-symbol">☎</span><span><small>ТЕЛЕФОН</small><b id="employeePhone" class="empty-value">Не указан</b></span></div>
+            <div class="profile-detail"><span class="detail-symbol">＠</span><span><small>ЭЛЕКТРОННАЯ ПОЧТА</small><b id="employeeEmail" class="empty-value">Не указана</b></span></div>
+          </div></article>
+
+          <aside class="employee-side-column">
+            <article class="employee-card access-card"><div class="employee-card-heading"><div><p class="section-kicker">РАБОЧИЙ ДОСТУП</p><h2>Роль и права</h2></div><span class="access-shield">✓</span></div><div class="role-chip"><i></i><span id="accessRole">Администратор</span></div><p>Доступ к управлению записями, заказами клиентов и прайс-листом студии.</p><div class="access-tags"><span>Заказы</span><span>Расписание</span><span>Прайс-лист</span></div></article>
+            <article class="employee-note"><span>✳</span><div><b>Профиль в порядке?</b><p>Поддерживай контакты актуальными, чтобы команда могла быстро связаться.</p><button type="button" id="noteEditButton">Обновить данные <span>↗</span></button></div></article>
+          </aside>
+        </section>
+
+        <footer class="page-footer"><span>© 2026 PITLANE GARAGE</span><span>КОМАНДА, КОТОРАЯ ЗАМЕЧАЕТ ДЕТАЛИ <i>✳</i></span><span><a href="index.html">← К ЗАКАЗАМ</a></span></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="profileModal" aria-hidden="true"><section class="order-modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle"><div class="modal-header"><div><p class="section-kicker">PITLANE GARAGE · ПРОФИЛЬ</p><h2 id="profileModalTitle">Редактировать данные</h2></div><button class="modal-close" type="button" data-close-profile aria-label="Закрыть">×</button></div><form id="profileForm"><div class="form-grid"><label class="field full-field"><span>Имя и фамилия</span><input name="name" required autocomplete="name"></label><label class="field full-field"><span>Должность</span><input name="role" required></label><label class="field"><span>Телефон</span><input name="phone" type="tel" autocomplete="tel" placeholder="+7 ___ ___ __ __"></label><label class="field"><span>Электронная почта</span><input name="email" type="email" autocomplete="email" placeholder="name@example.com"></label><label class="field"><span>График смены</span><input name="shift" required placeholder="09:00—21:00"></label><label class="field"><span>Студия / локация</span><input name="location" required placeholder="PITLANE GARAGE · Астана"></label></div><div class="modal-actions"><button class="button-ghost" type="button" data-close-profile>Отмена</button><button class="button-primary" type="submit">Сохранить профиль <span>↗</span></button></div></form></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="employee.js"></script>
+</body>
+</html>

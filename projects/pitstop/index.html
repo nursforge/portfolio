@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151515">
+  <meta name="description" content="PITLANE — система записи и управления заказами авто-детейлинга.">
+  <title>PITLANE — управление детейлингом</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="PITLANE — главная">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 21.5 7.2 13c.5-1.4 1.8-2.3 3.3-2.3h11c1.5 0 2.8.9 3.3 2.3l3.2 8.5v4H4z"/><path d="M8 20h16M11 10.5 13 6h6l2 4.5M8 24h3m10 0h3"/></svg></span>
+        <span class="brand-copy"><b>PITLANE</b><small>DETAILING CONTROL</small></span>
+      </a>
+
+      <div class="shop-switcher"><span class="shop-avatar">P</span><span><b>PITLANE GARAGE</b><small>Астана · Бокс 01</small></span><span class="switch-chevron">⌄</span></div>
+
+      <p class="nav-label">РАБОЧЕЕ ПРОСТРАНСТВО</p>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <button class="nav-item active" type="button" data-view="dashboard"><span class="nav-icon">▦</span>Обзор<span class="nav-shortcut">01</span></button>
+        <button class="nav-item" type="button" data-view="orders"><span class="nav-icon">▤</span>Заказы<span class="nav-count" id="navOrderCount">0</span></button>
+        <button class="nav-item" type="button" data-view="services"><span class="nav-icon">◈</span>Услуги</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="shift-card"><span class="shift-pulse"></span><span><b>СМЕНА ОТКРЫТА</b><small>Сегодня · 09:00—21:00</small></span><span class="shift-clock" id="shiftClock">--:--</span></div>
+        <a class="profile" href="employee.html" aria-label="Открыть профиль сотрудника"><span class="profile-avatar" id="sidebarEmployeeAvatar">НМ</span><span><b id="sidebarEmployeeName">Нурсултан</b><small id="sidebarEmployeeRole">Администратор</small></span><span class="profile-menu" aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Открыть меню">☰</button>
+        <div class="breadcrumb"><span>PITLANE GARAGE</span><i>/</i><b id="breadcrumbCurrent">ОБЗОР</b></div>
+        <div class="topbar-actions"><span class="today-label"><span class="live-dot"></span>БОКС РАБОТАЕТ</span><button class="icon-button notification-button" type="button" aria-label="Уведомления">♧<i></i></button><a class="top-avatar" id="topEmployeeAvatar" href="employee.html" aria-label="Профиль сотрудника">НМ</a></div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="page-heading">
+          <div><p class="date-kicker" id="currentDate">ПОНЕДЕЛЬНИК, 12 ОКТЯБРЯ</p><h1 id="pageTitle">Рабочий день<span class="heading-period">.</span></h1><p class="page-subtitle" id="pageSubtitle">Всё под контролем. Вот что происходит в боксе сегодня.</p></div>
+          <button class="button-primary" id="newOrderButton" type="button"><span class="plus">＋</span>Новая запись</button>
+        </section>
+
+        <section class="hero-strip" aria-label="Рабочая информация">
+          <div class="hero-copy"><span class="hero-eyebrow"><i></i> PITLANE GARAGE · АСТАНА</span><h2>Чистая работа.<br><em>Быстрый результат.</em></h2><p>Сегодня в боксе: планируй загрузку, принимай авто и держи каждый заказ на виду.</p><button type="button" class="hero-link" id="heroBooking">Добавить автомобиль <span>↗</span></button></div>
+          <div class="hero-visual" aria-hidden="true"><span class="hero-orbit orbit-one"></span><span class="hero-orbit orbit-two"></span><span class="hero-number">01</span><svg class="hero-car" viewBox="0 0 620 250" fill="none"><path d="m77 163 27-44c12-19 31-31 53-35l76-12 48-39c13-10 28-15 44-15h87c22 0 43 8 58 23l46 45 40 14c21 7 36 26 39 48l5 34H73l4-19Z" fill="#26282b" stroke="#dfe2e5" stroke-width="3"/><path d="m247 70 40-32c11-9 24-14 38-14h84c17 0 33 6 45 18l40 39-247-11Z" fill="#101214" stroke="#9ca0a4" stroke-width="2"/><path d="m297 44-21 31 94 4V30h-45c-10 0-20 5-28 14Zm90-14v50l96 4-40-39c-10-10-24-15-38-15h-18Z" fill="#34444d"/><path d="m90 160 39-3m369 1 59 6" stroke="#ee2434" stroke-width="7" stroke-linecap="round"/><path d="M144 178h388" stroke="#70757a" stroke-width="2"/><circle cx="178" cy="188" r="39" fill="#121416" stroke="#9a9ea1" stroke-width="4"/><circle cx="178" cy="188" r="19" fill="#34383b" stroke="#ee2434" stroke-width="4"/><circle cx="475" cy="188" r="39" fill="#121416" stroke="#9a9ea1" stroke-width="4"/><circle cx="475" cy="188" r="19" fill="#34383b" stroke="#ee2434" stroke-width="4"/><path d="M45 227h530" stroke="#ee2434" stroke-width="2" opacity=".5"/><path d="M67 222h75m370 0h42" stroke="#fff" stroke-width="2" opacity=".32"/></svg><div class="hero-bottom"><span>DETAILING STUDIO</span><span>51°10′ N&nbsp; 71°26′ E</span></div></div>
+          <div class="hero-side-note">CRAFTED<br>FOR THE<br>DRIVE <span>✳</span></div>
+        </section>
+
+        <section class="stats-grid" aria-label="Статистика">
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">ЗАПИСИ СЕГОДНЯ</span><span class="stat-icon red-icon">▤</span></div><div class="stat-value" id="todayCount">0</div><div class="stat-foot"><span class="stat-trend">●</span> <span id="todayFoot">Новых записей на сегодня</span></div><div class="stat-sparkline spark-red"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">В РАБОТЕ</span><span class="stat-icon gray-icon">◷</span></div><div class="stat-value" id="inProgressCount">0</div><div class="stat-foot"><span class="neutral-dot">●</span> Автомобилей сейчас в боксе</div><div class="stat-sparkline spark-gray"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">ВЫРУЧКА СЕГОДНЯ</span><span class="stat-icon gray-icon">₸</span></div><div class="stat-value stat-money" id="todayRevenue">0 <small>₸</small></div><div class="stat-foot"><span class="neutral-dot">●</span> По завершённым заказам</div><div class="stat-sparkline spark-gray"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+          <article class="stat-card stat-highlight"><div class="stat-top"><span class="stat-label">СЛЕДУЮЩАЯ ЗАПИСЬ</span><span class="stat-icon red-icon">↗</span></div><div class="next-appointment" id="nextAppointment"><b>Пока свободно</b><small>Добавь запись, чтобы заполнить расписание</small></div><div class="appointment-track"><span id="appointmentTrack"></span></div><div class="stat-foot">РАСПИСАНИЕ БОКСА <b>ОТКРЫТО</b></div></article>
+        </section>
+
+        <section class="lower-grid">
+          <article class="orders-panel">
+            <div class="panel-heading"><div><p class="section-kicker">LIVE BOARD <span></span></p><h2 id="ordersHeading">План на сегодня</h2></div><button class="text-button" id="seeAllButton" type="button">Все заказы <span>→</span></button></div>
+            <div class="orders-toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Поиск по имени, авто или номеру"></label><label class="filter-select"><span class="sr-only">Фильтр заказов</span><select id="statusFilter"><option value="all">Все статусы</option><option value="Новая">Новая</option><option value="В работе">В работе</option><option value="Готово">Готово</option><option value="Отменена">Отменена</option></select></label></div>
+            <div class="table-scroll"><table class="orders-table"><thead><tr id="tableHeaders"><th>КЛИЕНТ / АВТОМОБИЛЬ</th><th>УСЛУГА</th><th>ВРЕМЯ</th><th>СТАТУС</th><th>СУММА</th><th><span class="sr-only">Действия</span></th></tr></thead><tbody id="ordersTableBody"></tbody></table><div class="empty-state" id="emptyState" hidden><span>▤</span><b>Пока здесь чисто</b><p>Попробуй изменить фильтр или добавь новую запись.</p><button class="button-outline" id="emptyAddButton" type="button">Добавить запись</button></div></div>
+            <div class="table-footer"><span id="tableSummary">Показаны записи на сегодня</span><span class="table-status"><i></i> ОБНОВЛЕНО ТОЛЬКО ЧТО</span></div>
+          </article>
+
+          <aside class="side-column">
+            <article class="capacity-card"><div class="panel-heading compact"><div><p class="section-kicker">ЗАГРУЗКА</p><h2>Бокс сегодня</h2></div><span class="capacity-value" id="capacityValue">0%</span></div><div class="capacity-meter"><span id="capacityMeter"></span></div><div class="capacity-legend"><span><i class="legend-red"></i>Занято</span><b id="capacityBookings">0 / 8 записей</b></div><div class="capacity-divider"></div><div class="capacity-hours"><span>09:00</span><div class="hour-slots" id="hourSlots"></div><span>21:00</span></div><p class="capacity-note"><span>✳</span> Оставь время на качественную работу — не перегружай смену.</p></article>
+            <article class="service-mini-card"><div class="service-mini-top"><span class="service-mini-icon">✦</span><span class="service-tag">ПОПУЛЯРНО</span></div><p class="section-kicker">ВЫБОР КЛИЕНТОВ</p><h3>Комплексный уход</h3><p>Детейлинг мойка + воск + уборка салона</p><div class="service-mini-bottom"><b>от 35 000 ₸</b><button type="button" id="popularServiceButton" aria-label="Записать на комплексный уход">↗</button></div><div class="service-card-watermark">P</div></article>
+          </aside>
+        </section>
+
+        <footer class="page-footer"><span>© 2026 PITLANE GARAGE</span><span>СДЕЛАНО ДЛЯ ТЕХ, КТО ЛЮБИТ ДЕТАЛИ <i>✳</i></span><span>BUILD <b>1.0.4</b></span></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="orderModal" aria-hidden="true"><section class="order-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-header"><div><p class="section-kicker">PITLANE GARAGE · НОВЫЙ ЗАКАЗ</p><h2 id="modalTitle">Новая запись</h2></div><button type="button" class="modal-close" data-close-modal aria-label="Закрыть">×</button></div><form id="orderForm"><div class="form-section-title"><span>01</span> ИНФОРМАЦИЯ О КЛИЕНТЕ</div><div class="form-grid"><label class="field full-field"><span>Имя клиента</span><input name="customer" required placeholder="Например, Арман Садыков" autocomplete="name"></label><label class="field"><span>Телефон</span><input name="phone" required placeholder="+7 7__ ___ __ __" autocomplete="tel"></label><label class="field"><span>Автомобиль</span><input name="car" required placeholder="BMW 530i, чёрный"></label></div><div class="form-section-title form-section-spaced"><span>02</span> ЗАКАЗ И РАСПИСАНИЕ</div><div class="form-grid"><label class="field full-field"><span>Услуга</span><select name="service" id="serviceSelect" required></select></label><label class="field"><span>Дата</span><input name="date" id="orderDate" type="date" required></label><label class="field"><span>Время</span><select name="time" required><option>09:00</option><option>10:30</option><option>12:00</option><option>13:30</option><option>15:00</option><option>16:30</option><option>18:00</option><option>19:30</option></select></label><label class="field full-field"><span>Комментарий <small>необязательно</small></span><textarea name="note" rows="2" placeholder="Пожелания клиента, особенности авто..."></textarea></label></div><div class="price-preview"><span><b id="selectedServiceName">Выберите услугу</b><small>Стоимость по прайсу</small></span><strong id="selectedServicePrice">0 ₸</strong></div><div class="modal-actions"><button class="button-ghost" type="button" data-close-modal>Отмена</button><button class="button-primary" type="submit">Создать заказ <span>↗</span></button></div></form></section></div>
+
+  <div class="detail-drawer-backdrop" id="detailBackdrop"><aside class="detail-drawer" id="detailDrawer" aria-labelledby="detailTitle"><div class="drawer-top"><span class="drawer-label">КАРТОЧКА ЗАКАЗА</span><button type="button" class="modal-close" id="closeDrawer" aria-label="Закрыть">×</button></div><div id="detailContent"></div></aside></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

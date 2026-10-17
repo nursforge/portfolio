@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="Полное меню Frito: боксы, комбо, бургеры, твистеры, закуски, напитки и соусы.">
+  <title>Меню Frito — хруст начинается здесь</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="menu-page">
+  <div class="topline"><span>✳</span> <button class="city-trigger" id="cityTrigger" type="button">Астана <span aria-hidden="true">⌄</span></button> · хрустящая курочка · каждый день 11:30–02:00 <span>✳</span></div>
+  <header class="header container">
+    <a class="brand" href="index.html#top" aria-label="Frito — главная"><img src="images/brand.svg" alt="Frito"></a>
+    <nav class="nav" id="nav"><a href="menu.html" aria-current="page">Меню</a><a href="index.html#about">Наш характер</a><a href="index.html#how">Доставка</a><a href="index.html#footer">Контакты</a></nav>
+    <div class="header-actions"><a class="phone" href="tel:+77009380000">+7 700 938 00 00</a><button class="cart-button" type="button" id="openCart" aria-label="Открыть корзину">🛒<span class="cart-count" id="cartCount">0</span></button><a class="button primary" href="https://frito.kz/" target="_blank" rel="noopener">Заказать <span>↗</span></a></div>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню">☰</button>
+  </header>
+  <main>
+    <section class="menu-hero container"><div><div class="kicker">FRITO / Полный каталог</div><h1>Хруст<br><span class="accent">по списку.</span></h1><p>Все боксы, комбо, бургеры, твистеры и всё, что делает их ещё вкуснее.</p></div><div class="menu-hero-image"><img src="images/strips.jpg" alt="Хрустящие куриные стрипсы"><span>От первого укуса<br>до последней крошки ✳</span></div></section>
+    <section class="section container full-menu" id="fullMenu"><div class="section-heading"><div><div class="kicker">Выбирай не спеша</div><h2>Меню Frito</h2></div><p>Добавляй позиции в корзину — она сохранит выбор, пока ты переходишь по страницам.</p></div>
+      <div class="filters menu-filters" role="group" aria-label="Разделы меню"><button class="filter active" data-filter="all">Всё меню</button><button class="filter" data-filter="box">Боксы</button><button class="filter" data-filter="combo">Комбо</button><button class="filter" data-filter="burger">Бургеры</button><button class="filter" data-filter="twister">Твистеры</button><button class="filter" data-filter="snack">Закуски</button><button class="filter" data-filter="drink">Напитки</button><button class="filter" data-filter="sauce">Соусы</button></div>
+      <div class="menu-grid" id="menuGrid"></div><p class="menu-footnote">Цены приведены по официальному меню Frito для Астаны на момент подготовки страницы и могут изменяться. Ассортимент, наличие и цена зависят от выбранного ресторана и адреса доставки.</p>
+    </section>
+  </main>
+  <footer class="footer container" id="footer"><a class="brand" href="index.html#top" aria-label="Frito — главная"><img src="images/brand.svg" alt="Frito"></a><div class="footer-links"><a href="https://www.instagram.com/frito.kz/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@frito.kz" target="_blank" rel="noopener">TikTok</a><a href="https://frito.kz/" target="_blank" rel="noopener">Официальный сайт</a></div><div class="footer-contact"><a href="tel:+77009380000">+7 700 938 00 00</a><br><span data-city-label>Астана</span> · ежедневно 11:30–02:00</div></footer>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div><aside class="cart-drawer" id="cartDrawer" aria-label="Корзина" aria-hidden="true"><div class="drawer-head"><h2>Твой выбор</h2><button class="close-drawer" id="closeCart" type="button" aria-label="Закрыть корзину">×</button></div><div class="cart-items" id="cartItems"><p class="cart-empty">Пока тут пусто. Добавь что-нибудь хрустящее из меню.</p></div><div class="cart-total"><div class="cart-total-line"><span>Итого</span><span id="cartTotal">0 ₸</span></div><a class="button primary" href="https://frito.kz/" target="_blank" rel="noopener">Продолжить на Frito.kz ↗</a><p class="cart-hint">Для оформления заказа откроется официальный сервис Frito.</p></div></aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div><div class="city-modal" id="cityModal" aria-hidden="true"><button class="city-backdrop" type="button" data-city-close aria-label="Закрыть"></button><section class="city-dialog" role="dialog" aria-modal="true" aria-labelledby="cityTitle"><button class="city-close" type="button" data-city-close aria-label="Закрыть">×</button><div class="kicker">Выбери город</div><h2 id="cityTitle">Где будем хрустеть?</h2><p>Доставка доступна в пределах зоны ресторанов.</p><div class="city-options" id="cityOptions"></div><small>Список городов по информации на сайте Frito. Наличие меню и зон доставки уточняется при заказе.</small></section></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="Frito — хрустящая курочка, бургеры и боксы в Астане.">
+  <title>Frito — хруст начинается здесь</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topline"><span>✳</span> <button class="city-trigger" id="cityTrigger" type="button">Астана <span aria-hidden="true">⌄</span></button> · хрустящая курочка · каждый день 11:30–02:00 <span>✳</span></div>
+  <header class="header container">
+    <a class="brand" href="#top" aria-label="Frito — главная"><img src="images/brand.svg" alt="Frito"></a>
+    <nav class="nav" id="nav"><a href="menu.html">Меню</a><a href="#about">Наш характер</a><a href="#how">Доставка</a><a href="#footer">Контакты</a></nav>
+    <div class="header-actions">
+      <a class="phone" href="tel:+77009380000">+7 700 938 00 00</a>
+      <button class="cart-button" type="button" id="openCart" aria-label="Открыть корзину">🛒<span class="cart-count" id="cartCount">0</span></button>
+      <a class="button primary" href="https://frito.kz/" target="_blank" rel="noopener">Заказать <span>↗</span></a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню">☰</button>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-grid">
+        <div class="hero-visual">
+          <img src="images/hero.jpg" alt="Хрустящий куриный бургер с сыром и соусом">
+          <div class="hero-index"><span>01</span> / 03&nbsp;&nbsp; Frito mood</div>
+          <div class="sticker"><div><b>100%</b> crunch<br>energy</div></div>
+          <div class="photo-caption"><span>Frito original</span><strong>Хруст с первого укуса</strong></div>
+        </div>
+        <div class="hero-copy-block">
+          <div class="kicker">Frito · честно хрустим</div>
+          <h1>Громче<br><span class="accent">хрусти.</span></h1>
+          <p class="hero-copy">Хрустящая курочка, сочные бургеры на бриоши и тот самый соус. Когда хочется вкусно — не нужны лишние поводы.</p>
+          <div class="hero-actions"><a class="button primary" href="menu.html">Выбрать вкус <span>↓</span></a><div class="delivery-note"><span class="delivery-icon">↗</span><span><strong>35–45 минут</strong>доставка по <span data-city-label>Астане</span></span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Хрустим сочно <b>✳</b></span><span>Без скучных укусов <b>✳</b></span><span>Больше соуса <b>✳</b></span><span>Только Frito mood <b>✳</b></span><span>Хрустим сочно <b>✳</b></span><span>Без скучных укусов <b>✳</b></span><span>Больше соуса <b>✳</b></span><span>Только Frito mood <b>✳</b></span></div></div>
+
+    <section class="section container" id="menu">
+      <div class="section-heading reveal"><div><div class="kicker">Под настроение</div><h2>Выбирай<br>своё.</h2></div><p>Бургеры, боксы и закуски с той самой хрустящей курочкой. Всё меню — на отдельной странице.</p></div>
+      <div class="category-cards">
+        <a class="category-card category-card-box" href="menu.html#boxes"><span>01 / Сытно</span><strong>Боксы<br>и комбо</strong><i>↗</i></a>
+        <a class="category-card category-card-burger" href="menu.html#burgers"><span>02 / Сочно</span><strong>Бургеры<br>и твистеры</strong><i>↗</i></a>
+        <a class="category-card category-card-snack" href="menu.html#snacks"><span>03 / К компании</span><strong>Закуски,<br>напитки, соусы</strong><i>↗</i></a>
+      </div>
+      <a class="button primary menu-all-link" href="menu.html">Смотреть всё меню <span>↗</span></a>
+    </section>
+
+    <section class="manifesto" id="about"><div class="container manifesto-grid">
+      <div class="reveal"><div class="kicker lime-text">Не просто перекус</div><h2>Хруст — это <em>настроение.</em></h2><p>Мы за еду, которая собирает друзей, спасает длинный день и превращает обычную паузу в маленький праздник. Заказывай домой или забирай с собой.</p>
+        <div class="facts"><div class="fact"><strong>35–45</strong><span>минут доставка</span></div><div class="fact"><strong>15</strong><span>минут самовывоз</span></div><div class="fact"><strong>11:30</strong><span>начинаем день</span></div></div>
+      </div>
+      <div class="manifesto-art reveal"><div class="orbit"></div><img src="images/strips.jpg" alt="Золотистые хрустящие куриные стрипсы"></div>
+    </div></section>
+
+    <section class="how container" id="how">
+      <div class="section-heading reveal"><div><div class="kicker">Просто и быстро</div><h2>Три шага<br>до хруста.</h2></div><p>Не хочется никуда идти? Заказывай доставку. Уже рядом? Забирай самовывозом.</p></div>
+      <div class="steps"><article class="step reveal"><div class="step-num">01 <span>↗</span></div><h3>Выбери вкус</h3><p>Бокс на компанию, бургер для себя или стрипсы к фильму.</p></article><article class="step reveal"><div class="step-num">02 <span>↗</span></div><h3>Оформи на Frito.kz</h3><p>Укажи адрес доставки или выбери самовывоз в официальном сервисе.</p></article><article class="step reveal"><div class="step-num">03 <span>✳</span></div><h3>Лови свой заказ</h3><p>Доставка обычно занимает 35–45 минут, самовывоз — от 15 минут.</p></article></div>
+    </section>
+
+    <section class="cta-band container reveal"><div><div class="kicker lime-text">Голодный уже?</div><h2>Не откладывай<br>вкусное.</h2><p>Закажи любимое в официальном сервисе Frito.</p></div><a class="button lime" href="https://frito.kz/" target="_blank" rel="noopener">Перейти к заказу <span>↗</span></a></section>
+  </main>
+
+  <footer class="footer container" id="footer">
+    <a class="brand" href="#top" aria-label="Frito — наверх"><img src="images/brand.svg" alt="Frito"></a>
+    <div class="footer-links"><a href="https://www.instagram.com/frito.kz/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@frito.kz" target="_blank" rel="noopener">TikTok</a><a href="https://frito.kz/" target="_blank" rel="noopener">Официальный сайт</a></div>
+    <div class="footer-contact"><a href="tel:+77009380000">+7 700 938 00 00</a><br>Астана · ежедневно 11:30–02:00</div>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Корзина" aria-hidden="true">
+    <div class="drawer-head"><h2>Твой выбор</h2><button class="close-drawer" id="closeCart" type="button" aria-label="Закрыть корзину">×</button></div>
+    <div class="cart-items" id="cartItems"><p class="cart-empty">Пока тут пусто. Добавь что-нибудь хрустящее из меню.</p></div>
+    <div class="cart-total"><div class="cart-total-line"><span>Итого</span><span id="cartTotal">0 ₸</span></div><a class="button primary" href="https://frito.kz/" target="_blank" rel="noopener">Продолжить на Frito.kz ↗</a><p class="cart-hint">Для оформления заказа откроется официальный сервис Frito.</p></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="city-modal" id="cityModal" aria-hidden="true"><button class="city-backdrop" type="button" data-city-close aria-label="Закрыть"></button><section class="city-dialog" role="dialog" aria-modal="true" aria-labelledby="cityTitle"><button class="city-close" type="button" data-city-close aria-label="Закрыть">×</button><div class="kicker">Выбери город</div><h2 id="cityTitle">Где будем хрустеть?</h2><p>Доставка доступна в пределах зоны ресторанов.</p><div class="city-options" id="cityOptions"></div><small>Список городов по информации на сайте Frito. Наличие меню и зон доставки уточняется при заказе.</small></section></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
